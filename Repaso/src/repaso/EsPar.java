@@ -15,6 +15,7 @@ public class EsPar {
 		System.out.print("Ingrese un valor entero: ");
 		numero = miScanner.nextInt();
 		miScanner.close();
+		
 		if (esPar(numero)) {
 			System.out.println(numero + " Es Par");
 		}
