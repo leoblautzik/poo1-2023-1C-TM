@@ -31,6 +31,11 @@ public class EsPrimo {
 		} else {
 			System.out.println(numero + " No Es Primo");
 		}
+		
+		String saludo = "buen dia";
+		System.out.println(saludo);
+		
+		
 	}
 
 }
