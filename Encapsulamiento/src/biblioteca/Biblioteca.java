@@ -79,13 +79,29 @@ public class Biblioteca {
 	// Calcule el tiempo (en minutos) que llevaría leer todos los libros, asumiendo
 	// que se tarda 1 minuto por página.
 	public int tiempoEnLeetTodosLosLibros() {
-
-		return 0;
+		int minutos = 0;
+		for (int i = 0; i < this.cantLibros; i++) {
+			minutos += libros[i].getPaginas();
+		}
+		return minutos;
 
 	}
 
 	// Informe por pantalla la cantidad de libros que hay por cada Genero literario.
-	public void librosPorGeneroLiterario() {
+	public String librosPorGeneroLiterario() {
+
+		Genero generos[] = Genero.values();
+		int acumuladores[] = new int[generos.length];
+		String cadena = "";
+
+		for (int i = 0; i < this.cantLibros; i++) {
+			acumuladores[libros[i].getGenero().ordinal()]++;
+		}
+		for (int i = 0; i < generos.length; i++) {
+			cadena += generos[i] + "\t" + acumuladores[i] + "\n";
+		}
+		
+		return cadena;
 
 	}
 }

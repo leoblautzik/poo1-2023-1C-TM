@@ -7,6 +7,7 @@ public enum Genero {
 	Historia, 
 	Ciencias,
 	Suspenso,
+	Comedia,
+	Manga,
 	NoDefinido
-
 }

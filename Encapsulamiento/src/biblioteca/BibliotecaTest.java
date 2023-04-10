@@ -82,8 +82,30 @@ public class BibliotecaTest {
 		
 	}
 	
+	@Test
+	public void tiempoEnLeerLaBibliotecaTest() {
+		Biblioteca bDc = new Biblioteca(10);
+		bDc.agregarLibro("Otra vuelta de tuerca", "Henry James", Genero.Suspenso, 155);
+		bDc.agregarLibro("El origen", "Dan Brown", Genero.Novela, 989);
+		assertEquals(1144, bDc.tiempoEnLeetTodosLosLibros());
+	}
 	
-
+	@Test
+	public void tiempoEnLeerLaBibliotecaVaciaTest() {
+		Biblioteca bDc = new Biblioteca(10);
+		assertEquals(0, bDc.tiempoEnLeetTodosLosLibros());
+	}
 	
+	@Test
+	public void librosPorGeneroTest() {
+		Biblioteca bDc = new Biblioteca(10);
+		bDc.agregarLibro("Otra vuelta de tuerca", "Henry James", Genero.Suspenso, 155);
+		bDc.agregarLibro("Moby Dick", "Herman Melville", Genero.Novela, 1800);
+		bDc.agregarLibro("El origen", "Dan Brown", Genero.Historia, 989);
+		bDc.agregarLibro("Inferno", "Dan Brown", Genero.Novela, 1200);
+	
+		System.out.println(bDc.librosPorGeneroLiterario());
+		
+	}
 
 }
