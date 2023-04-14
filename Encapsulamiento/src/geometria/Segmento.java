@@ -1,6 +1,6 @@
 package geometria;
 
-public class Segmento {
+public class Segmento implements Desplazable, Comparable<Segmento>, EsParalelo {
 
 	private Punto a;
 	private Punto b;
@@ -29,11 +29,24 @@ public class Segmento {
 
 	public boolean esPerpendicular(Segmento s2) {
 
-		return this.pendiente() == (1/s2.pendiente());
+		return this.pendiente() == (1 / s2.pendiente());
 	}
 
 	private double pendiente() {
 		return (b.getY() - a.getY()) / (b.getX() - a.getX());
+	}
+
+	@Override
+	public int compareTo(Segmento otroSegmento) {
+		
+		return Double.compare(this.longitud(), otroSegmento.longitud());
+	}
+
+	@Override
+	public void mover(double enx, double eny) {
+		this.a.mover(enx, eny);
+		this.b.mover(enx, eny);
+		
 	}
 
 }

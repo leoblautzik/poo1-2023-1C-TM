@@ -1,6 +1,6 @@
 package geometria;
 
-public class Punto {
+public class Punto implements Desplazable {
 
 	private double x;
 	private double y;
@@ -67,6 +67,13 @@ public class Punto {
 		distanciaEntreP1yP2 = p1.distancia(p2);
 		System.out.println("No static " + distanciaEntreP1yP2);
 
+	}
+
+	@Override
+	public void mover(double enx, double eny) {
+		this.x += enx;
+		this.y += eny;
+		
 	}
 
 }

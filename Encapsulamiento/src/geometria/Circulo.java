@@ -1,10 +1,11 @@
 package geometria;
 
-public class Circulo {
-	
+public class Circulo extends Figura {
+		
 	private double radio;
 	
-	public Circulo(double radio) {
+	public Circulo(double x, double y, double radio) {
+		super(x, y);
 		this.setRadio(radio);
 	}
 
@@ -29,6 +30,14 @@ public class Circulo {
 	public double getDiametro() {
 		return 2 * this.getRadio();
 	}
+	
+	@Override
+	public String toString() {
+		return "Circulo [radio=" + radio + "]";
+	}
+
+	
+	
 	
 	
 	
