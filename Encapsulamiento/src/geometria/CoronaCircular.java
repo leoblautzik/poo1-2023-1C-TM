@@ -5,11 +5,11 @@ public class CoronaCircular {
 	private Circulo grande;
 	private Circulo agujero;
 	
-	public CoronaCircular(double radioInterior, double radioExterior) {
+	public CoronaCircular(double x, double y, double radioInterior, double radioExterior) {
 		if (radioInterior >= radioExterior)
 			throw new Error("Radios invalidos");
-		this.agujero = new Circulo(radioInterior);
-		this.grande = new Circulo(radioExterior);
+		this.agujero = new Circulo(x,y,radioInterior);
+		this.grande = new Circulo(x,y,radioExterior);
 	}
 	
 	public double getArea() {
