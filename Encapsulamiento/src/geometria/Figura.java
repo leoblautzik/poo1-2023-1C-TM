@@ -8,6 +8,10 @@ public abstract class Figura implements Comparable<Figura>, Desplazable {
 		this.punto = new Punto(x, y);
 	}
 	
+	protected Punto getPunto() {
+		return punto;
+	}
+
 	public void mover(double enx, double eny) {
 		this.punto.mover(enx, eny);
 	}

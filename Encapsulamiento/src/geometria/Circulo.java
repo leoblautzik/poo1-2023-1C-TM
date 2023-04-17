@@ -8,7 +8,15 @@ public class Circulo extends Figura {
 		super(x, y);
 		this.setRadio(radio);
 	}
+	public Circulo(Punto centro, double radio) {
+		super(centro.getX(), centro.getY());
+		this.setRadio(radio);
+	}
 
+	public Punto getCentro() {
+		return super.getPunto();
+	}
+	
 	public double getRadio() {
 		return radio;
 	}
@@ -36,7 +44,11 @@ public class Circulo extends Figura {
 		return "Circulo [radio=" + radio + "]";
 	}
 
-	
+	public boolean intersectaCon(Circulo otroCirculo) {
+		double sumaDeLosRadios = this.radio + otroCirculo.radio;
+		double distanciaEntreCentros = this.getCentro().distancia(otroCirculo.getCentro());
+		return distanciaEntreCentros <= sumaDeLosRadios;
+	}
 	
 	
 	
