@@ -36,4 +36,11 @@ public abstract class Cuenta {
 		destino.depositar(this.extraer(monto));
 	}
 
+	@Override
+	public String toString() {
+		return "Cuenta [dni=" + dni + ", saldo=" + saldo + "]";
+	}
+	
+	
+
 }
