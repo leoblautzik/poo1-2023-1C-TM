@@ -1,7 +1,9 @@
 package bibliotecaConList;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Biblioteca {
 	private ArrayList<Libro> libros;
@@ -83,23 +85,25 @@ public class Biblioteca {
 
 	}
 
-	// Informe por pantalla la cantidad de libros que hay por cada Genero literario.
-	public String librosPorGeneroLiterario() {
-
-		Genero generos[] = Genero.values();
-		int acumuladores[] = new int[generos.length];
-		String cadena = "";
-
-		for (Libro libro : libros) {
-			acumuladores[libro.getGenero().ordinal()]++;
-			
+	/**
+	 * Devuelve un map de tipo <Genero, List<Libro>> 
+	 * con los lobros de caga genero literario.
+	 * @return HasMap<Genero, List<Libro>>
+	 */
+	public Map<Genero,List<Libro>> librosPorGeneroLiterario() {
+		Map<Genero, List<Libro>> mapita = new HashMap<Genero, List<Libro>>();
+		List<Libro> lista;
+		//Recorro la lista de libros
+		for (Libro cadaLibro : this.libros) {
+			Genero k = cadaLibro.getGenero();
+			if(!mapita.containsKey(k)) {
+				lista = new ArrayList<Libro>();
+			} else {
+				lista = mapita.get(k);
+			}
+			lista.add(cadaLibro);
+			mapita.put(k,lista);
 		}
-				
-		for (int i = 0; i < generos.length; i++) {
-			cadena += generos[i] + "\t" + acumuladores[i] + "\n";
-		}
-
-		return cadena;
-
+		return mapita;
 	}
 }

@@ -20,7 +20,6 @@ public class BibliotecaConListTest {
 		assertEquals(1, bDc.cuantosLibros());
 
 	}
-
 	
 	@Test
 	public void tituloApartirDeLaPosicionTest() {
