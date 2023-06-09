@@ -62,9 +62,6 @@ public class GuiaColecciones {
 		return deApertura.contains(c) ;
 	}
 
-	public static void main(String[] args) {
-		
-
-	}
+	
 
 }
